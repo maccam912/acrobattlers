@@ -20,7 +20,7 @@ deno check **/*.ts **/*.tsx || { echo "Type checking failed. Please fix the type
 
 # Run tests
 echo "Running tests..."
-deno test --allow-all || { echo "Tests failed. Please fix the failing tests and try again."; exit 1; }
+deno task test || { echo "Tests failed. Please fix the failing tests and try again."; exit 1; }
 
 echo "All pre-commit checks passed!"
 exit 0
