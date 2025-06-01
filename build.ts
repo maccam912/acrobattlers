@@ -7,10 +7,10 @@ import { build } from "https://deno.land/x/dnt/mod.ts";
  */
 async function main() {
   console.log("Building Acrobattlers...");
-  
+
   // Add your build steps here
   // This is a placeholder for your actual build logic
-  
+
   console.log("Build completed successfully!");
 }
 
