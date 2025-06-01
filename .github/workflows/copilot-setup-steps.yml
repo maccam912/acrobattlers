@@ -13,3 +13,12 @@ jobs:
 
       - name: Setup Deno
         uses: denoland/setup-deno@v2
+      
+      - name: Cache Deno dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('deno.lock') }}
+
+      - name: Deno Install
+        run: deno install
