@@ -1,0 +1,23 @@
+{  "tasks": {
+    "dev": "deno run -A dev.ts",
+    "build": "deno run -A build.ts",
+    "test": "deno test --allow-all",
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "setup-hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-commit"
+  },
+  "lint": {
+    "include": ["src/", "tests/"],
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "fmt": {
+    "include": ["src/", "tests/", "*.ts", "*.js"]
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window", "dom"],
+    "strict": true
+  }
+}
