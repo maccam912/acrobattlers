@@ -1,10 +1,10 @@
-name: "CI - Test and Build"
+name: 'CI - Test and Build'
 
-on: 
+on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -19,7 +19,7 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      
+
       - name: Cache Bun dependencies
         uses: actions/cache@v4
         with:

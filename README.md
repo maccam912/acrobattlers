@@ -34,6 +34,7 @@ acrobattlers
 ### Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/acrobattlers.git
    cd acrobattlers
@@ -47,11 +48,13 @@ acrobattlers
 ### Running the Game
 
 1. Start the server:
+
    ```
    bun run server
    ```
 
 2. Start the client:
+
    ```
    bun run client
    ```
@@ -61,6 +64,7 @@ acrobattlers
 ### Testing
 
 To run tests, use the following command:
+
 ```
 bun test
 ```

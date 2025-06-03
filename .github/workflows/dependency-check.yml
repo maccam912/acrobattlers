@@ -1,0 +1,44 @@
+name: 'Dependency Check'
+
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  dependency-check:
+    name: 'Check Dependencies'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Check for outdated dependencies
+        id: outdated
+        run: |
+          echo "# Dependency Check Report" > dependency-report.md
+          echo "" >> dependency-report.md
+          echo "## Outdated Dependencies" >> dependency-report.md
+          echo "" >> dependency-report.md
+          echo "\`\`\`" >> dependency-report.md
+          bun outdated >> dependency-report.md || echo "No outdated dependencies found" >> dependency-report.md
+          echo "\`\`\`" >> dependency-report.md
+
+      - name: Upload dependency report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-report
+          path: dependency-report.md
+          retention-days: 30

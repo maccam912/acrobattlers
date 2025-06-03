@@ -16,11 +16,6 @@
     },
     "moduleResolution": "node"
   },
-  "include": [
-    "client/src/**/*",
-    "server/src/**/*", 
-    "shared/src/**/*",
-    "tests/**/*"
-  ],
+  "include": ["client/src/**/*", "server/src/**/*", "shared/src/**/*", "tests/**/*"],
   "exclude": ["node_modules", "dist"]
 }
