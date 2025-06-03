@@ -1,51 +1,78 @@
 # Acrobattlers
 
-A SvelteKit application built with Deno, Vite, and Vitest.
+Acrobattlers is a multiplayer platforming game inspired by Worms, where players control acrobatic characters in a dynamic environment. The game features various scenes, player interactions, and a server-client architecture using Colyseus for real-time multiplayer functionality.
 
-## Development Setup
+## Project Structure
+
+```
+acrobattlers
+├── client                # Client-side application
+│   ├── src               # Source files for the client
+│   ├── public            # Public assets
+│   ├── index.html        # Main HTML file
+│   ├── vite.config.ts    # Vite configuration
+│   └── tsconfig.json     # TypeScript configuration for client
+├── server                # Server-side application
+│   ├── src               # Source files for the server
+│   └── tsconfig.json     # TypeScript configuration for server
+├── shared                # Shared code between client and server
+│   └── tsconfig.json     # TypeScript configuration for shared code
+├── tests                 # Test files for client and server
+├── package.json          # Bun configuration
+├── bun.lockb            # Bun lock file
+├── vitest.config.ts      # Vitest configuration
+└── tsconfig.json         # TypeScript configuration for the entire project
+```
+
+## Getting Started
 
 ### Prerequisites
 
-- [Deno](https://deno.land/#installation) - Make sure you have Deno installed.
+- Install [Bun](https://bun.sh/) for package management.
+- Install [Node.js](https://nodejs.org/) if not already installed.
 
-### Setup
+### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone [your-repository-url]
+   ```
+   git clone https://github.com/yourusername/acrobattlers.git
    cd acrobattlers
    ```
 
-2. Set up Git hooks:
-   ```bash
-   deno task setup-hooks
+2. Install dependencies:
+   ```
+   bun install
    ```
 
-3. Start the development server:
-   ```bash
-   deno task dev
+### Running the Game
+
+1. Start the server:
+   ```
+   bun run server
    ```
 
-## Available Tasks
+2. Start the client:
+   ```
+   bun run client
+   ```
 
-- **Development Server**: `deno task dev`
-- **Build for Production**: `deno task build`
-- **Run Tests**: `deno task test`
-- **Format Code**: `deno task fmt`
-- **Lint Code**: `deno task lint`
+3. Open your browser and navigate to `http://localhost:3000` to play the game.
 
-## CI/CD
+### Testing
 
-This project uses GitHub Actions for CI/CD with the following workflows:
-- **Test**: Runs the test suite
-- **Lint**: Checks code for linting issues
-- **Format**: Ensures code is properly formatted
-- **Build**: Builds the application and checks types
-
-## Pre-commit Hooks
-
-Pre-commit hooks are set up to run formatting, linting, type checking, and tests before committing code. To configure the hooks, run:
-
-```bash
-deno task setup-hooks
+To run tests, use the following command:
 ```
+bun test
+```
+
+### Gameplay
+
+In Acrobattlers, players take control of unique characters and engage in acrobatic battles across various platforms. Utilize your environment, dodge projectiles, and outmaneuver your opponents to claim victory!
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
