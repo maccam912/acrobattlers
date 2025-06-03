@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "bun run vite",
-    "build": "bun run vite build",
+    "build": "bun run vite build --config client/vite.config.ts",
     "test": "bun run vitest",
+    "test:watch": "bun run vitest --watch",
+    "test:coverage": "bun run vitest --coverage",
     "server": "bun run server/src/index.ts",
-    "client": "bun run vite --config client/vite.config.ts"
+    "client": "bun run vite --config client/vite.config.ts",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@colyseus/schema": "^3.0.39",
@@ -16,8 +19,10 @@
     "vite-plugin-html": "^3.2.2"
   },
   "devDependencies": {
+    "@types/node": "^22.15.29",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.0.0",
     "vite": "^4.0.0",
-    "vitest": "^0.30.0",
-    "typescript": "^5.0.0"
+    "vitest": "^0.30.0"
   }
 }

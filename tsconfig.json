@@ -7,11 +7,20 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
     "paths": {
-      "*": ["*", "types/*"]
-    }
+      "@/*": ["client/src/*"],
+      "@shared/*": ["shared/src/*"]
+    },
+    "moduleResolution": "node"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": [
+    "client/src/**/*",
+    "server/src/**/*", 
+    "shared/src/**/*",
+    "tests/**/*"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
